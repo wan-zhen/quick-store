@@ -11,9 +11,31 @@
                 "index": 0
             },
             "x-prompt": "Enter store name (ex: bonus-setting)"
+        },
+        "isEnityStore": {
+            "type": "boolean",
+            "$default": {
+                "$source": "argv",
+                "index": 1
+            },
+            "x-prompt": {
+                "message": "What kind of store?",
+                "type": "list",
+                "items": [
+                    {
+                        "value": true,
+                        "label": "Enity Store"
+                    },
+                    {
+                        "value": false,
+                        "label": "Store"
+                    }
+                ]
+            }
         }
     },
     "required": [
-        "name"
+        "name",
+        "isEnityStore"
     ]
 }
