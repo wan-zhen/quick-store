@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "quick-store",
+    "type": "object",
+    "description": "quick generate store",
+    "properties": {
+        "name": {
+            "type": "string",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "Enter store name (ex: bonus-setting)"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}
