@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 @StoreConfig({ name: '' })
-<% if (isEnityStore) { %>export class <%= classify(name) %>Store extends EntityStore<<%= classify(name) %>State> { }<% } %><% if (!isEnityStore) { %>export class <%= classify(name) %>Store extends Store<<%= classify(name) %>State> { }<% } %>
+<% if (isEnityStore) { %>export class <%= classify(name) %>Store extends EntityStore<<%= classify(name) %>State> { <% } %><% if (!isEnityStore) { %>export class <%= classify(name) %>Store extends Store<<%= classify(name) %>State> { <% } %>
   constructor() {
     super({});
   }

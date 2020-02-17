@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { <%= classify(name) %>State, <%= classify(name) %>Store } from '@akita/stores';
 
 @Injectable()
-<% if (isEnityStore) { %>export class <%= classify(name) %>Query extends QueryEntity { }<% } %><% if (!isEnityStore) { %>export class <%= classify(name) %>Query extends Query { }<% } %>
+<% if (isEnityStore) { %>export class <%= classify(name) %>Query extends QueryEntity<<%= classify(name) %>State> { <% } %><% if (!isEnityStore) { %>export class <%= classify(name) %>Query extends Query<<%= classify(name) %>State> { <% } %>
   constructor(
     protected store: <%= classify(name) %>Store,
   ) {
