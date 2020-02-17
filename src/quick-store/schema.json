@@ -32,10 +32,22 @@
                     }
                 ]
             }
+        },
+        "hasMock": {
+            "type": "boolean",
+            "$default": {
+                "$source": "argv",
+                "index": 2
+            },
+            "x-prompt": {
+                "message": "Do you want mock store?",
+                "type": "confirmation"
+            }
         }
     },
     "required": [
         "name",
-        "isEnityStore"
+        "isEnityStore",
+        "hasMock"
     ]
 }
