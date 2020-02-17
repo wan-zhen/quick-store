@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { QueryEntity } from '@datorama/akita';
+<% if (isEnityStore) { %>import { QueryEntity } from '@datorama/akita';<% } %><% if (!isEnityStore) { %>import { Query } from '@datorama/akita';<% } %>
 import { <%= classify(name) %>State, <%= classify(name) %>Store } from '@akita/stores';
 
 @Injectable()
