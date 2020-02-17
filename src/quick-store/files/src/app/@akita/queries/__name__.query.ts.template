@@ -3,8 +3,7 @@ import { QueryEntity } from '@datorama/akita';
 import { <%= classify(name) %>State, <%= classify(name) %>Store } from '@akita/stores';
 
 @Injectable()
-export class <%= classify(name) %>Query extends QueryEntity<<%= classify(name) %>State> {
-
+<% if (isEnityStore) { %>export class <%= classify(name) %>Query extends QueryEntity { }<% } %><% if (!isEnityStore) { %>export class <%= classify(name) %>Query extends Query { }<% } %>
   constructor(
     protected store: <%= classify(name) %>Store,
   ) {

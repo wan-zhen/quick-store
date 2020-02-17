@@ -1,6 +1,6 @@
 {
   "name": "@zhen-zhen/quick-store",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
