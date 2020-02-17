@@ -1,9 +1,9 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "quick-store": {
+    "store": {
       "description": "A blank schematic.",
-      "factory": "./quick-store/index#quickStore",
+      "factory": "./quick-store/index#store",
       "schema": "./quick-store/schema.json"
     }
   }

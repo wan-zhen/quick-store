@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export type <%= classify(name) %>State = { }<% } %>
 
 @Injectable()
-@StoreConfig({})
+@StoreConfig({ name: '' })
 export class <%= classify(name) %>Store extends EntityStore<<%= classify(name) %>State> {
   constructor() {
     super({});

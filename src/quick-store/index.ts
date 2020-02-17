@@ -3,13 +3,14 @@ import { Schema } from './schema';
 import { strings } from '@angular-devkit/core';
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export function quickStore(_options: Schema): Rule {
+export function store(_options: Schema): Rule {
   return async (tree: Tree, _context: SchematicContext) => {
     const AKITA_PATH = './src/app/@akita';
     const storeName = _options.name;
     // add index code
-    ['mock', 'query', 'services', 'store']
-      .forEach(file => {
+    const exportName = ['-mock.service', '.query', '.service', '.store'];
+    ['mock', 'queries', 'services', 'stores']
+      .forEach((file, index) => {
         if (file === 'mock' && !_options.hasMock) {
           return
         }
@@ -18,7 +19,7 @@ export function quickStore(_options: Schema): Rule {
           tree.beginUpdate(path)
             .insertLeft(
               (tree.read(path) || []).toString().length,
-              `export * from './${strings.dasherize(storeName)}.${file}';\n`
+              `export * from './${strings.dasherize(storeName)}${exportName[index]}';\n`
             )
         )
       });
