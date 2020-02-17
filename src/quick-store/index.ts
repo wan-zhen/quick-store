@@ -1,4 +1,4 @@
-import { Rule, SchematicContext, Tree, url, apply, template, mergeWith } from '@angular-devkit/schematics';
+import { Rule, SchematicContext, Tree, url, apply, mergeWith, applyTemplates } from '@angular-devkit/schematics';
 import { Schema } from './schema';
 import { strings } from '@angular-devkit/core';
 // You don't have to export the function as default. You can also have more than one rule factory
@@ -61,7 +61,7 @@ export function quickStore(_options: Schema): Rule {
     //add template
     const sourceTemplates = url('./files'); // 使用範本
     const sourceParametrizedTemplates = apply(sourceTemplates, [
-      template({
+      applyTemplates({
         ..._options, // 使用者所輸入的參數
         ...strings
       }),
