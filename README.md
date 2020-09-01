@@ -15,3 +15,7 @@ in command line
 ```
 ng g @zhen-zhen/quick-store:store
 ```
+
+# npm link
+
+[npm](https://www.npmjs.com/package/@zhen-zhen/quick-store) 
